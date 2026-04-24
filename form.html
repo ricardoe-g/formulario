@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styleform.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2 id="tituloPagina">Cadastrar</h2>
+
+    <form id="meuFormulario">
+        <p>Entre o título</p>
+        <input type="text" id="titulo" name="titulo" placeholder="Digite o título" required>
+        
+        <input type="url" id="link" name="imagem" placeholder="Digite a url da imagem" required>
+        
+        <textarea id="descricao" name="descricao" placeholder="Digite a descrição da imagem"></textarea>
+        
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <button type="button" onclick="alterarFundo()">
+        Alterar fundo
+    </button>
+</body>
+</html>
