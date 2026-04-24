@@ -4,7 +4,7 @@ function alterarFundo() {
 const meuFormulario = document.getElementByID('meuFormulario
 formulario.addEventListener('submit', function(evento){
 	event.preventDefault();
-	const.novotitulo = ducument.getElementByID('titulo').value;
-	const.novaImagem = ducument.getElementByID('link').value;
-	const.novoTexto = ducument.getElementByID('descricao').value;
+	const.novotitulo = document.getElementById('titulo').value;
+	const.novaImagem = document.getElementById('link').value;
+	const.novoTexto = document.getElementById('descricao').value;
 })
