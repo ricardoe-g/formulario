@@ -7,7 +7,7 @@ const colecao = document.getElementById('colecao');
 meuFormulario.addEventListener('submit', function(evento){
 	evento.preventDefault();
 
-	
+	// CAPTURAR
 	const novoTitulo = document.getElementById('titulo').value;
 	const novaImagem = document.getElementById('link').value;
 	const novoTexto = document.getElementById('descricao').value;
@@ -18,7 +18,7 @@ meuFormulario.addEventListener('submit', function(evento){
 		texto: novoTexto
 	};
 
-	
+	// MONTAR
 	const card = `
 		<div class="card">
 			<img src="${novo.imagem}">
@@ -27,9 +27,9 @@ meuFormulario.addEventListener('submit', function(evento){
 		</div>
 	`;
 
-	
+	// EXIBIR
 	colecao.innerHTML += card;
 
-	
+	// LIMPAR
 	meuFormulario.reset();
 });
