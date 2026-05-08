@@ -21,8 +21,8 @@ meuFormulario.addEventListener('submit', function(evento){
 	// MONTAR
 	const card = `
 		<div class="card">
-			<img src="${novo.imagem}">
 			<h3>${novo.titulo}</h3>
+			<img src="${novo.imagem}">
 			<p>${novo.texto}</p>
 		</div>
 	`;
