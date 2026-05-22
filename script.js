@@ -4,32 +4,49 @@ function alterarFundo() {
 const meuFormulario = document.getElementById('meuFormulario');
 const colecao = document.getElementById('colecao');
 
+function renderizarCards(novo) {
+
+    const novoCard = `
+    <div class="card">
+
+        <div class="letras">
+            <h3 id="titulo">${novo.titulo}</h3>
+            <p>${novo.texto}</p>
+        </div>
+
+        <div class="img">
+            <img src="${novo.imagem}" alt="${novo.descricaoIm}">
+        </div>
+
+    </div>
+    `;
+
+    return novoCard;
+}
+
 meuFormulario.addEventListener('submit', function(evento){
-	evento.preventDefault();
 
-	// CAPTURAR
-	const novoTitulo = document.getElementById('titulo').value;
-	const novaImagem = document.getElementById('link').value;
-	const novoTexto = document.getElementById('descricao').value;
+    evento.preventDefault();
 
-	const novo = {
-		titulo: novoTitulo,
-		imagem: novaImagem,
-		texto: novoTexto
-	};
+    // CAPTURAR
+    const novoTitulo = document.getElementById('titulo').value;
+    const novaImagem = document.getElementById('link').value;
+    const novoTexto = document.getElementById('descricao').value;
 
-	// MONTAR
-	const card = `
-		<div class="card">
-			<h3>${novo.titulo}</h3>
-			<img src="${novo.imagem}">
-			<p>${novo.texto}</p>
-		</div>
-	`;
+    // OBJETO
+    const novo = {
+        titulo: novoTitulo,
+        imagem: novaImagem,
+        texto: novoTexto,
+        descricaoIm: novoTitulo
+    };
 
-	// EXIBIR
-	colecao.innerHTML += card;
+    // CHAMAR FUNÇÃO
+    const card = renderizarCards(novo);
 
-	// LIMPAR
-	meuFormulario.reset();
+    // EXIBIR
+    colecao.innerHTML += card;
+
+    // LIMPAR
+    meuFormulario.reset();
 });
