@@ -4,7 +4,7 @@ function alterarFundo() {
 const meuFormulario = document.getElementById('meuFormulario');
 const colecao = document.getElementById('colecao');
 
-function renderizarCards(novo) {
+function renderizarCards(animais) {
 
     const novoCard = `
     <div class="card">
@@ -42,7 +42,7 @@ meuFormulario.addEventListener('submit', function(evento){
     };
 
     // CHAMAR FUNÇÃO
-    const card = renderizarCards(novo);
+    renderizarCards(novo);
 
     // EXIBIR
     colecao.innerHTML += card;
