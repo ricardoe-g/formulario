@@ -10,12 +10,12 @@ function renderizarCards(animais) {
     <div class="card">
 
         <div class="letras">
-            <h3 id="titulo">${novo.titulo}</h3>
-            <p>${novo.texto}</p>
+            <h3 id="titulo">${animais.titulo}</h3>
+            <p>${animais.texto}</p>
         </div>
 
         <div class="img">
-            <img src="${novo.imagem}" alt="${novo.descricaoIm}">
+            <img src="${animais.imagem}" alt="${animais.descricaoIm}">
         </div>
 
     </div>
