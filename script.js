@@ -1,14 +1,18 @@
 function alterarFundo() {
     document.body.classList.toggle("dark");
 }
+
 const meuFormulario = document.getElementById('meuFormulario');
 const colecao = document.getElementById('colecao');
 
 let galeria = JSON.parse(localStorage.getItem('galeria')) || [];
 
-galeria.forEach(item => {
-    colecao.innerHTML += renderizarCards(item);
-});
+function renderizarGaleria() {
+    colecao.innerHTML = "";
+    galeria.forEach(item => {
+        colecao.innerHTML += renderizarCards(item);
+    });
+}
 
 function renderizarCards(animais) {
     return `
@@ -25,6 +29,8 @@ function renderizarCards(animais) {
     `;
 }
 
+renderizarGaleria();
+
 meuFormulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
 
@@ -35,10 +41,8 @@ meuFormulario.addEventListener('submit', function (evento) {
     };
 
     galeria.push(novo);
-
     localStorage.setItem('galeria', JSON.stringify(galeria));
 
-    colecao.innerHTML += renderizarCards(novo);
-
+    renderizarGaleria();
     meuFormulario.reset();
 });
