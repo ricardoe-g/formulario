@@ -1,9 +1,14 @@
 function alterarFundo() {
     document.body.classList.toggle("dark");
 }
-
 const meuFormulario = document.getElementById('meuFormulario');
 const colecao = document.getElementById('colecao');
+
+let galeria = JSON.parse(localStorage.getItem('galeria')) || [];
+
+galeria.forEach(item => {
+    colecao.innerHTML += renderizarCards(item);
+});
 
 function renderizarCards(animais) {
     return `
@@ -23,19 +28,17 @@ function renderizarCards(animais) {
 meuFormulario.addEventListener('submit', function (evento) {
     evento.preventDefault();
 
-    const novoTitulo = document.getElementById('titulo').value;
-    const novaImagem = document.getElementById('link').value;
-    const novoTexto = document.getElementById('descricao').value;
-
     const novo = {
-        titulo: novoTitulo,
-        imagem: novaImagem,
-        texto: novoTexto
+        titulo: document.getElementById('titulo').value,
+        imagem: document.getElementById('link').value,
+        texto: document.getElementById('descricao').value
     };
 
-    const card = renderizarCards(novo);
+    galeria.push(novo);
 
-    colecao.innerHTML += card;
+    localStorage.setItem('galeria', JSON.stringify(galeria));
+
+    colecao.innerHTML += renderizarCards(novo);
 
     meuFormulario.reset();
 });
