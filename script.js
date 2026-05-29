@@ -7,26 +7,22 @@ const colecao = document.getElementById('colecao');
 
 let galeria = JSON.parse(localStorage.getItem('galeria')) || [];
 
-function renderizarGaleria() {
-    colecao.innerHTML = "";
-    galeria.forEach(item => {
-        colecao.innerHTML += renderizarCards(item);
-    });
+function salvar() {
+    localStorage.setItem('galeria', JSON.stringify(galeria));
 }
 
-function renderizarCards(animais) {
-    return `
-    <div class="card">
-        <div class="letras">
-            <h3>${animais.titulo}</h3>
-            <p>${animais.texto}</p>
+function renderizarGaleria() {
+    colecao.innerHTML = galeria.map(item => `
+        <div class="card">
+            <div class="letras">
+                <h3>${item.titulo}</h3>
+                <p>${item.texto}</p>
+            </div>
+            <div class="img">
+                <img src="${item.imagem}" alt="${item.titulo}">
+            </div>
         </div>
-
-        <div class="img">
-            <img src="${animais.imagem}" alt="${animais.titulo}">
-        </div>
-    </div>
-    `;
+    `).join('');
 }
 
 renderizarGaleria();
@@ -41,8 +37,7 @@ meuFormulario.addEventListener('submit', function (evento) {
     };
 
     galeria.push(novo);
-    localStorage.setItem('galeria', JSON.stringify(galeria));
-
+    salvar();
     renderizarGaleria();
     meuFormulario.reset();
 });
