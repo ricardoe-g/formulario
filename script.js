@@ -1,6 +1,7 @@
 function alterarFundo() {
     document.body.classList.toggle("dark");
 }
+
 const meuFormulario = document.getElementById('meuFormulario');
 const colecao = document.getElementById('colecao');
 
