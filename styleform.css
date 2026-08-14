@@ -30,10 +30,44 @@ button:hover {
     background: #555;
 }
 
-/* modo escuro simples */
+#colecao {
+    width: 100%;
+}
+
+.card {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: white;
+    color: black;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.letras {
+    flex: 1;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
 .dark {
     background: #111;
     color: #fff;
 }
 
+.dark form {
+    background: #222;
+}
 
+.dark .card {
+    background: #222;
+    color: #fff;
+}
