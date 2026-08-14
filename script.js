@@ -3,6 +3,13 @@ class Galeria {
     this.galeria = JSON.parse(localStorage.getItem('galeria')) || [];
     this.colecao = document.getElementById('colecao');
     this.formulario = document.getElementById('meuFormulario');
+
+    this.mostrar();
+
+    this.formulario.addEventListener('submit', evento => {
+      evento.preventDefault();
+      this.adicionar();
+    });
   }
 
   salvar() {
@@ -25,9 +32,9 @@ class Galeria {
 
   adicionar() {
     this.galeria.push({
-      titulo: titulo.value,
-      imagem: link.value,
-      texto: descricao.value
+      titulo: document.getElementById('titulo').value,
+      imagem: document.getElementById('link').value,
+      texto: document.getElementById('descricao').value
     });
 
     this.salvar();
@@ -40,14 +47,4 @@ function alterarFundo() {
   document.body.classList.toggle("dark");
 }
 
-var galeria;
-
-function setup() {
-  galeria = new Galeria();
-  galeria.mostrar();
-
-  galeria.formulario.addEventListener('submit', evento => {
-    evento.preventDefault();
-    galeria.adicionar();
-  });
-}
+var galeria = new Galeria();
