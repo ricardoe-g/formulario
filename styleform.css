@@ -36,38 +36,4 @@ button:hover {
     color: #fff;
 }
 
-#colecao {
-    width: 90%;
-    margin: 20px auto;
-}
 
-.card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    margin: 15px 0;
-    background: white;
-    color: black;
-    text-align: left;
-}
-
-.card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-}
-
-.letras {
-    flex: 1;
-}
-
-.dark .card {
-    background: #222;
-    color: white;
-}
-
-.dark form {
-    background: #222;
-}
