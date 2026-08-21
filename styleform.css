@@ -12,7 +12,8 @@ form {
     background: #fff;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     margin: 8px 0;
     padding: 8px;
@@ -35,7 +36,6 @@ button:hover {
     width: 100%;
 }
 
-/* Card */
 .card {
     width: 500px;
     margin: 20px auto;
@@ -50,24 +50,20 @@ button:hover {
     align-items: center;
 }
 
-/* Título */
 .card h3 {
     margin: 0 0 15px 0;
 }
 
-/* Imagem */
 .card img {
     width: 150px;
     height: 150px;
     object-fit: cover;
 }
 
-/* Descrição */
 .card p {
     margin: 15px 0 0 0;
 }
 
-/* Modo escuro */
 .dark {
     background: #111;
     color: #fff;
