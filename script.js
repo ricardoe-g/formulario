@@ -1,11 +1,16 @@
 class Galeria {
   constructor() {
+    console.log("Galeria iniciou!");
+
     this.galeria = [];
     this.colecao = document.getElementById("colecao");
     this.formulario = document.getElementById("meuFormulario");
 
     this.formulario.addEventListener("submit", (evento) => {
       evento.preventDefault();
+
+      console.log("Botão Adicionar foi clicado!");
+
       this.adicionar();
     });
   }
@@ -17,6 +22,8 @@ class Galeria {
       texto: document.getElementById("descricao").value
     };
 
+    console.log("Novo item:", novo);
+
     this.galeria.push(novo);
 
     this.mostrar();
@@ -25,18 +32,18 @@ class Galeria {
   }
 
   mostrar() {
+    console.log("Mostrando itens...");
+
     this.colecao.innerHTML = "";
 
     this.galeria.forEach((item) => {
       this.colecao.innerHTML += `
         <div class="card">
-
           <h3>${item.titulo}</h3>
 
           <img src="${item.imagem}" alt="${item.titulo}">
 
           <p>${item.texto}</p>
-
         </div>
       `;
     });
