@@ -23,23 +23,19 @@ class Galeria {
   }
 
   mostrar() {
-    this.colecao.innerHTML = "";
+  this.colecao.innerHTML = "";
 
-    this.galeria.forEach(item => {
-      this.colecao.innerHTML += `
-        <div class="card">
-          <div class="letras">
-            <h3>${item.titulo}</h3>
-            <p>${item.texto}</p>
-          </div>
+  this.galeria.forEach(item => {
+    this.colecao.innerHTML += `
+      <div class="card">
+        <h3>${item.titulo}</h3>
 
-          <div class="img">
-            <img src="${item.imagem}" alt="${item.titulo}">
-          </div>
-        </div>
-      `;
-    });
-  }
+        <img src="${item.imagem}" alt="${item.titulo}">
+
+        <p>${item.texto}</p>
+      </div>
+    `;
+  });
 }
 
 function alterarFundo() {
