@@ -18,28 +18,33 @@ class Galeria {
     };
 
     this.galeria.push(novo);
+
     this.mostrar();
+
     this.formulario.reset();
   }
 
   mostrar() {
-  this.colecao.innerHTML = "";
+    this.colecao.innerHTML = "";
 
-  this.galeria.forEach(item => {
-    this.colecao.innerHTML += `
-      <div class="card">
-        <h3>${item.titulo}</h3>
+    this.galeria.forEach((item) => {
+      this.colecao.innerHTML += `
+        <div class="card">
 
-        <img src="${item.imagem}" alt="${item.titulo}">
+          <h3>${item.titulo}</h3>
 
-        <p>${item.texto}</p>
-      </div>
-    `;
-  });
+          <img src="${item.imagem}" alt="${item.titulo}">
+
+          <p>${item.texto}</p>
+
+        </div>
+      `;
+    });
+  }
 }
 
 function alterarFundo() {
   document.body.classList.toggle("dark");
 }
 
-var galeria = new Galeria();
+const galeria = new Galeria();
