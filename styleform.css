@@ -35,6 +35,7 @@ button:hover {
     width: 100%;
 }
 
+/* Card */
 .card {
     width: 500px;
     margin: 20px auto;
@@ -44,31 +45,29 @@ button:hover {
     text-align: center;
     box-sizing: border-box;
 
-    /* Coloca tudo um abaixo do outro */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.letras {
-    width: 100%;
+/* Título */
+.card h3 {
+    margin: 0 0 15px 0;
 }
 
-.letras h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-.letras p {
-    margin-top: 15px;
-}
-
-.img img {
+/* Imagem */
+.card img {
     width: 150px;
     height: 150px;
     object-fit: cover;
 }
 
+/* Descrição */
+.card p {
+    margin: 15px 0 0 0;
+}
+
+/* Modo escuro */
 .dark {
     background: #111;
     color: #fff;
